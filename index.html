@@ -2,51 +2,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alhera Bracket</title>
+<title>Bracket UI</title>
 <style>
-  body {font-family: Arial; background:#0f172a; color:#fff;}
-  h2{text-align:center;margin:20px}
-  .container{display:flex;gap:20px;overflow:auto;padding:20px}
-  .round{display:flex;flex-direction:column;gap:15px}
-  .match{background:#1e293b;padding:10px 14px;border-radius:10px;min-width:120px}
-  .winner{color:#22c55e;font-weight:bold}
-  .lottery{color:#facc15}
-  .loser{background:#7c2d12}
+body{background:#000;color:#fff;font-family:Arial;}
+.bracket{display:flex;justify-content:center;gap:60px;padding:40px}
+.round{display:flex;flex-direction:column;justify-content:center;gap:40px}
+.match{
+  background:#1a1a1a;
+  padding:15px;
+  border-radius:14px;
+  width:140px;
+  text-align:center;
+  position:relative;
+}
+.team{display:flex;justify-content:space-between;margin:5px 0}
+.line-right::after{
+  content:"";
+  position:absolute;
+  right:-30px;
+  top:50%;
+  width:30px;
+  height:2px;
+  background:#fff;
+}
+.line-left::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:50%;
+  width:30px;
+  height:2px;
+  background:#fff;
+}
+.connector{
+  width:2px;
+  height:40px;
+  background:#fff;
+  margin:auto;
+}
+.final{
+  background:#333;
+  border:2px solid gold;
+}
 </style>
 </head>
-<body>
-<h2>🏆 Knockout Bracket (Demo with A–R)</h2>
-<div class="container"><!-- ROUND 1 --><div class="round">
-<h3>R1</h3>
-<div class="match">A vs B → <span class="winner">A</span></div>
-<div class="match">C vs D → <span class="winner">C</span></div>
-<div class="match">E vs F → <span class="winner">E</span></div>
-<div class="match">G vs H → <span class="winner">G</span></div>
-<div class="match">I vs J → <span class="winner">I</span></div>
-<div class="match">K vs L → <span class="winner">K</span></div>
-<div class="match">M vs N → <span class="winner">M</span></div>
-<div class="match">O vs P → <span class="winner">O</span></div>
-<div class="match">Q vs R → <span class="winner">Q</span></div>
-</div><!-- ROUND 2 --><div class="round">
-<h3>R2</h3>
-<div class="match lottery">🎲 Q → R3</div>
-<div class="match">A vs C → <span class="winner">AC</span></div>
-<div class="match">E vs G → <span class="winner">EG</span></div>
-<div class="match">I vs K → <span class="winner">IK</span></div>
-<div class="match">M vs O → <span class="winner">MO</span></div>
-</div><!-- ROUND 3 --><div class="round">
-<h3>R3</h3>
-<div class="match lottery">🎲 Direct → Semi</div>
-<div class="match">AC vs EG → A (W), B (L)</div>
-<div class="match">IK vs MO → C (W), D (L)</div>
-<div class="match loser">🔁 B vs D → <span class="winner">E</span></div>
-</div><!-- SEMI --><div class="round">
-<h3>Semi</h3>
-<div class="match">A vs C → F1</div>
-<div class="match">E vs 🎲 → F2</div>
+<body><div class="bracket"><!-- LEFT SIDE --><div class="round">
+  <div class="match line-right">
+    <div class="team">A <span>1</span></div>
+    <div class="team">B <span>0</span></div>
+  </div>  <div class="match line-right">
+    <div class="team">C <span>2</span></div>
+    <div class="team">D <span>1</span></div>
+  </div>
+</div><!-- SEMI LEFT --><div class="round">
+  <div class="match line-left line-right">
+    <div>TBD</div>
+    <div>TBD</div>
+  </div>
 </div><!-- FINAL --><div class="round">
-<h3>Final</h3>
-<div class="match">F1 vs F2 → 🏆</div>
-</div></div>
-</body>
+  <div class="match final">
+    <div>W1</div>
+    <div>W2</div>
+    <div style="margin-top:10px;color:gold">FINAL</div>
+  </div>
+</div><!-- SEMI RIGHT --><div class="round">
+  <div class="match line-left line-right">
+    <div>TBD</div>
+    <div>TBD</div>
+  </div>
+</div><!-- RIGHT SIDE --><div class="round">
+  <div class="match line-left">
+    <div class="team">E <span>3</span></div>
+    <div class="team">F <span>2</span></div>
+  </div>  <div class="match line-left">
+    <div class="team">G <span>1</span></div>
+    <div class="team">H <span>4</span></div>
+  </div>
+</div></div></body>
 </html>
