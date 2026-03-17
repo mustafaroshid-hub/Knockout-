@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alhera Bracket</title>
+<style>
+  body {font-family: Arial; background:#0f172a; color:#fff;}
+  h2{text-align:center;margin:20px}
+  .container{display:flex;gap:20px;overflow:auto;padding:20px}
+  .round{display:flex;flex-direction:column;gap:15px}
+  .match{background:#1e293b;padding:10px 14px;border-radius:10px;min-width:120px}
+  .winner{color:#22c55e;font-weight:bold}
+  .lottery{color:#facc15}
+  .loser{background:#7c2d12}
+</style>
+</head>
+<body>
+<h2>🏆 Knockout Bracket (Demo with A–R)</h2>
+<div class="container"><!-- ROUND 1 --><div class="round">
+<h3>R1</h3>
+<div class="match">A vs B → <span class="winner">A</span></div>
+<div class="match">C vs D → <span class="winner">C</span></div>
+<div class="match">E vs F → <span class="winner">E</span></div>
+<div class="match">G vs H → <span class="winner">G</span></div>
+<div class="match">I vs J → <span class="winner">I</span></div>
+<div class="match">K vs L → <span class="winner">K</span></div>
+<div class="match">M vs N → <span class="winner">M</span></div>
+<div class="match">O vs P → <span class="winner">O</span></div>
+<div class="match">Q vs R → <span class="winner">Q</span></div>
+</div><!-- ROUND 2 --><div class="round">
+<h3>R2</h3>
+<div class="match lottery">🎲 Q → R3</div>
+<div class="match">A vs C → <span class="winner">AC</span></div>
+<div class="match">E vs G → <span class="winner">EG</span></div>
+<div class="match">I vs K → <span class="winner">IK</span></div>
+<div class="match">M vs O → <span class="winner">MO</span></div>
+</div><!-- ROUND 3 --><div class="round">
+<h3>R3</h3>
+<div class="match lottery">🎲 Direct → Semi</div>
+<div class="match">AC vs EG → A (W), B (L)</div>
+<div class="match">IK vs MO → C (W), D (L)</div>
+<div class="match loser">🔁 B vs D → <span class="winner">E</span></div>
+</div><!-- SEMI --><div class="round">
+<h3>Semi</h3>
+<div class="match">A vs C → F1</div>
+<div class="match">E vs 🎲 → F2</div>
+</div><!-- FINAL --><div class="round">
+<h3>Final</h3>
+<div class="match">F1 vs F2 → 🏆</div>
+</div></div>
+</body>
+</html>
