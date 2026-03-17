@@ -1,57 +1,192 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Bracket</title>
+<title>Alhera Bracket</title>
+
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial;}
-h2{text-align:center;padding:10px}/* scroll container */ .bracket{ display:flex; gap:20px; overflow-x:auto; padding:15px; }
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial;
+}
 
-.round{ display:flex; flex-direction:column; gap:20px; min-width:160px; }
+h2{
+  text-align:center;
+  padding:10px;
+}
 
-.match{ background:#1a1a1a; padding:12px; border-radius:12px; text-align:center; }
+/* Scrollable bracket */
+.bracket{
+  display:flex;
+  gap:25px;
+  overflow-x:auto;
+  padding:15px;
+}
 
-.team{ display:flex; justify-content:space-between; padding:4px 0; }
+/* Each round */
+.round{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  min-width:170px;
+}
 
-.final{ border:2px solid gold; background:#222; }
+/* Match card */
+.match{
+  background:#1a1a1a;
+  padding:12px;
+  border-radius:12px;
+  position:relative;
+}
 
-.lottery{ color:#facc15; font-size:12px; }
+.team{
+  display:flex;
+  justify-content:space-between;
+  padding:4px 0;
+}
 
-.loser{ background:#7c2d12; }
+/* Connector line */
+.match::after{
+  content:"";
+  position:absolute;
+  right:-25px;
+  top:50%;
+  width:25px;
+  height:2px;
+  background:#888;
+}
 
-/* mobile tweaks */ @media (max-width:600px){ .round{min-width:140px} .match{font-size:14px} } </style>
+/* Last round no line */
+.round:last-child .match::after{
+  display:none;
+}
+
+/* Special styles */
+.lottery{
+  color:#facc15;
+  font-size:13px;
+}
+
+.loser{
+  background:#7c2d12;
+}
+
+.final{
+  border:2px solid gold;
+  text-align:center;
+}
+
+/* Mobile tweak */
+@media(max-width:600px){
+  .round{min-width:150px}
+  .match{font-size:14px}
+}
+</style>
 
 </head>
-<body><h2>🏆 Alhera Bracket (Swipe ➡️)</h2><div class="bracket"><!-- ROUND 1 --><div class="round">
-<h4>R1</h4>
-<div class="match"><div class="team">A <span>1</span></div><div class="team">B <span>0</span></div></div>
-<div class="match"><div class="team">C <span>2</span></div><div class="team">D <span>1</span></div></div>
-<div class="match"><div class="team">E <span>3</span></div><div class="team">F <span>1</span></div></div>
-<div class="match"><div class="team">G <span>2</span></div><div class="team">H <span>0</span></div></div>
-<div class="match"><div class="team">I <span>1</span></div><div class="team">J <span>0</span></div></div>
-<div class="match"><div class="team">K <span>4</span></div><div class="team">L <span>2</span></div></div>
-<div class="match"><div class="team">M <span>2</span></div><div class="team">N <span>1</span></div></div>
-<div class="match"><div class="team">O <span>3</span></div><div class="team">P <span>2</span></div></div>
-<div class="match"><div class="team">Q <span>1</span></div><div class="team">R <span>0</span></div></div>
-</div><!-- ROUND 2 --><div class="round">
-<h4>R2</h4>
-<div class="match lottery">🎲 One team to R3</div>
-<div class="match">A vs C</div>
-<div class="match">E vs G</div>
-<div class="match">I vs K</div>
-<div class="match">M vs O</div>
-</div><!-- ROUND 3 --><div class="round">
-<h4>R3</h4>
-<div class="match lottery">🎲 Direct to Semi</div>
-<div class="match">W10 vs W11</div>
-<div class="match">W12 vs W13</div>
-<div class="match loser">🔁 Loser Match</div>
-</div><!-- SEMI --><div class="round">
-<h4>Semi</h4>
-<div class="match">A vs C</div>
-<div class="match">E vs 🎲</div>
-</div><!-- FINAL --><div class="round">
+<body>
+
+<h2>🏆 Alhera Football Fest</h2>
+
+<div class="bracket">
+
+<!-- ROUND 1 -->
+<div class="round">
+<h4>Round 1</h4>
+
+<div class="match">
+  <div class="team">Dakhil 2022</div>
+  <div class="team">Dakhil 2023</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2009</div>
+  <div class="team">Dakhil 2013</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2017</div>
+  <div class="team">Dakhil 2021</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2015</div>
+  <div class="team">Dakhil 2016</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2025</div>
+  <div class="team">Dakhil 2020</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2011</div>
+  <div class="team">Dakhil 2012</div>
+</div>
+
+<div class="match">
+  <div class="team">Alim 23</div>
+  <div class="team">Dakhil 2024</div>
+</div>
+
+<div class="match">
+  <div class="team">Senali Atit</div>
+  <div class="team">Dakhil 2014</div>
+</div>
+
+<div class="match">
+  <div class="team">Dakhil 2018</div>
+  <div class="team">Dakhil 2019</div>
+</div>
+
+</div>
+
+<!-- ROUND 2 -->
+<div class="round">
+<h4>Round 2</h4>
+
+<div class="match lottery">🎲 One team directly to Round 3</div>
+
+<div class="match">TBD vs TBD</div>
+<div class="match">TBD vs TBD</div>
+<div class="match">TBD vs TBD</div>
+<div class="match">TBD vs TBD</div>
+
+</div>
+
+<!-- ROUND 3 -->
+<div class="round">
+<h4>Round 3</h4>
+
+<div class="match lottery">🎲 Direct to Semi Final</div>
+
+<div class="match">TBD vs TBD</div>
+<div class="match">TBD vs TBD</div>
+
+<div class="match loser">🔁 Loser Match (TBD vs TBD)</div>
+
+</div>
+
+<!-- SEMI -->
+<div class="round">
+<h4>Semi Final</h4>
+
+<div class="match">TBD vs TBD</div>
+<div class="match">TBD vs TBD</div>
+
+</div>
+
+<!-- FINAL -->
+<div class="round">
 <h4>Final</h4>
-<div class="match final">Final Match 🏆</div>
-</div></div></body>
+
+<div class="match final">🏆 TBD vs TBD</div>
+
+</div>
+
+</div>
+
+</body>
 </html>
