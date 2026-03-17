@@ -2,81 +2,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bracket UI</title>
+<title>Mobile Bracket</title>
 <style>
-body{background:#000;color:#fff;font-family:Arial;}
-.bracket{display:flex;justify-content:center;gap:60px;padding:40px}
-.round{display:flex;flex-direction:column;justify-content:center;gap:40px}
-.match{
-  background:#1a1a1a;
-  padding:15px;
-  border-radius:14px;
-  width:140px;
-  text-align:center;
-  position:relative;
-}
-.team{display:flex;justify-content:space-between;margin:5px 0}
-.line-right::after{
-  content:"";
-  position:absolute;
-  right:-30px;
-  top:50%;
-  width:30px;
-  height:2px;
-  background:#fff;
-}
-.line-left::before{
-  content:"";
-  position:absolute;
-  left:-30px;
-  top:50%;
-  width:30px;
-  height:2px;
-  background:#fff;
-}
-.connector{
-  width:2px;
-  height:40px;
-  background:#fff;
-  margin:auto;
-}
-.final{
-  background:#333;
-  border:2px solid gold;
-}
-</style>
+body{margin:0;background:#000;color:#fff;font-family:Arial;}
+h2{text-align:center;padding:10px}/* scroll container */ .bracket{ display:flex; gap:20px; overflow-x:auto; padding:15px; }
+
+.round{ display:flex; flex-direction:column; gap:20px; min-width:160px; }
+
+.match{ background:#1a1a1a; padding:12px; border-radius:12px; text-align:center; }
+
+.team{ display:flex; justify-content:space-between; padding:4px 0; }
+
+.final{ border:2px solid gold; background:#222; }
+
+.lottery{ color:#facc15; font-size:12px; }
+
+.loser{ background:#7c2d12; }
+
+/* mobile tweaks */ @media (max-width:600px){ .round{min-width:140px} .match{font-size:14px} } </style>
+
 </head>
-<body><div class="bracket"><!-- LEFT SIDE --><div class="round">
-  <div class="match line-right">
-    <div class="team">A <span>1</span></div>
-    <div class="team">B <span>0</span></div>
-  </div>  <div class="match line-right">
-    <div class="team">C <span>2</span></div>
-    <div class="team">D <span>1</span></div>
-  </div>
-</div><!-- SEMI LEFT --><div class="round">
-  <div class="match line-left line-right">
-    <div>TBD</div>
-    <div>TBD</div>
-  </div>
+<body><h2>🏆 Alhera Bracket (Swipe ➡️)</h2><div class="bracket"><!-- ROUND 1 --><div class="round">
+<h4>R1</h4>
+<div class="match"><div class="team">A <span>1</span></div><div class="team">B <span>0</span></div></div>
+<div class="match"><div class="team">C <span>2</span></div><div class="team">D <span>1</span></div></div>
+<div class="match"><div class="team">E <span>3</span></div><div class="team">F <span>1</span></div></div>
+<div class="match"><div class="team">G <span>2</span></div><div class="team">H <span>0</span></div></div>
+<div class="match"><div class="team">I <span>1</span></div><div class="team">J <span>0</span></div></div>
+<div class="match"><div class="team">K <span>4</span></div><div class="team">L <span>2</span></div></div>
+<div class="match"><div class="team">M <span>2</span></div><div class="team">N <span>1</span></div></div>
+<div class="match"><div class="team">O <span>3</span></div><div class="team">P <span>2</span></div></div>
+<div class="match"><div class="team">Q <span>1</span></div><div class="team">R <span>0</span></div></div>
+</div><!-- ROUND 2 --><div class="round">
+<h4>R2</h4>
+<div class="match lottery">🎲 One team to R3</div>
+<div class="match">A vs C</div>
+<div class="match">E vs G</div>
+<div class="match">I vs K</div>
+<div class="match">M vs O</div>
+</div><!-- ROUND 3 --><div class="round">
+<h4>R3</h4>
+<div class="match lottery">🎲 Direct to Semi</div>
+<div class="match">W10 vs W11</div>
+<div class="match">W12 vs W13</div>
+<div class="match loser">🔁 Loser Match</div>
+</div><!-- SEMI --><div class="round">
+<h4>Semi</h4>
+<div class="match">A vs C</div>
+<div class="match">E vs 🎲</div>
 </div><!-- FINAL --><div class="round">
-  <div class="match final">
-    <div>W1</div>
-    <div>W2</div>
-    <div style="margin-top:10px;color:gold">FINAL</div>
-  </div>
-</div><!-- SEMI RIGHT --><div class="round">
-  <div class="match line-left line-right">
-    <div>TBD</div>
-    <div>TBD</div>
-  </div>
-</div><!-- RIGHT SIDE --><div class="round">
-  <div class="match line-left">
-    <div class="team">E <span>3</span></div>
-    <div class="team">F <span>2</span></div>
-  </div>  <div class="match line-left">
-    <div class="team">G <span>1</span></div>
-    <div class="team">H <span>4</span></div>
-  </div>
+<h4>Final</h4>
+<div class="match final">Final Match 🏆</div>
 </div></div></body>
 </html>
