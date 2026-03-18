@@ -4,18 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alhera Bracket</title>
 <style>
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial;overflow-x:auto}
-.bracket{display:flex;gap:80px;padding:40px}
-.round{display:flex;flex-direction:column;justify-content:space-around;position:relative}
-.match{background:#1a1a1a;padding:12px;border-radius:12px;width:170px;text-align:center;position:relative}
-.team{padding:4px 0}/* horizontal line */ .match::after{ content:""; position:absolute; right:-40px; top:50%; width:40px; height:2px; background:#fff; }
+body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial}.bracket{ display:flex; gap:30px; padding:20px; overflow-x:auto; }
 
-/* vertical pair connector */ .pair{position:relative} .pair::after{ content:""; position:absolute; right:-40px; top:50%; transform:translateY(-50%); width:2px; height:100px; background:#fff; }
+.round{ display:flex; flex-direction:column; justify-content:space-around; min-width:160px; position:relative; }
 
-.final .match::after{display:none} .final{display:flex;align-items:center;justify-content:center}
+.match{ background:#1a1a1a; padding:10px; border-radius:10px; text-align:center; position:relative; margin:20px 0; }
 
-@media(max-width:600px){ .match{width:140px;font-size:12px} } </style>
+.team{padding:3px 0;font-size:13px}
 
+/* horizontal line */ .match::after{ content:""; position:absolute; right:-20px; top:50%; width:20px; height:2px; background:#fff; }
+
+/* vertical connector */ .pair{position:relative} .pair::after{ content:""; position:absolute; right:-20px; top:0; width:2px; height:100%; background:#fff; }
+
+.final .match::after{display:none} .final{justify-content:center}
+
+/* 📱 MOBILE FIX */ @media(max-width:600px){ .bracket{ flex-direction:column; overflow-x:hidden; }
+
+.round{ flex-direction:row; flex-wrap:wrap; justify-content:center; gap:10px; }
+
+.match{ width:45%; margin:5px; }
+
+.match::after, .pair::after{ display:none; } }
+
+</style>
 </head>
 <body><div class="bracket"><!-- ROUND 1 --><div class="round">
 <div class="pair">
