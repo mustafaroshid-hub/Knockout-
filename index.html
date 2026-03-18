@@ -2,65 +2,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alhera Bracket</title>
+<title>Alhera Full Bracket</title>
 <style>
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial}.bracket{ display:flex; gap:30px; padding:20px; overflow-x:auto; }
-
-.round{ display:flex; flex-direction:column; justify-content:space-around; min-width:160px; position:relative; }
-
-.match{ background:#1a1a1a; padding:10px; border-radius:10px; text-align:center; position:relative; margin:20px 0; }
-
-.team{padding:3px 0;font-size:13px}
-
-/* horizontal line */ .match::after{ content:""; position:absolute; right:-20px; top:50%; width:20px; height:2px; background:#fff; }
-
-/* vertical connector */ .pair{position:relative} .pair::after{ content:""; position:absolute; right:-20px; top:0; width:2px; height:100%; background:#fff; }
-
-.final .match::after{display:none} .final{justify-content:center}
-
-/* 📱 MOBILE FIX */ @media(max-width:600px){ .bracket{ flex-direction:column; overflow-x:hidden; }
-
-.round{ flex-direction:row; flex-wrap:wrap; justify-content:center; gap:10px; }
-
-.match{ width:45%; margin:5px; }
-
-.match::after, .pair::after{ display:none; } }
-
+body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial}
+.wrapper{overflow-x:auto;padding:20px}
+svg{min-width:1400px;height:900px}
+.box{fill:#1a1a1a;stroke:#fff;stroke-width:1;rx:10}
+.text{fill:#fff;font-size:11px}
+.line{stroke:#fff;stroke-width:2}
 </style>
 </head>
-<body><div class="bracket"><!-- ROUND 1 --><div class="round">
-<div class="pair">
-<div class="match"><div class="team">Dakhil 2022</div><div class="team">Dakhil 2023</div></div>
-<div class="match"><div class="team">Dakhil 2009</div><div class="team">Dakhil 2013</div></div>
-</div><div class="pair">
-<div class="match"><div class="team">Dakhil 2017</div><div class="team">Dakhil 2021</div></div>
-<div class="match"><div class="team">Dakhil 2015</div><div class="team">Dakhil 2016</div></div>
-</div><div class="pair">
-<div class="match"><div class="team">Dakhil 2025</div><div class="team">Dakhil 2020</div></div>
-<div class="match"><div class="team">Dakhil 2011</div><div class="team">Dakhil 2012</div></div>
-</div><div class="pair">
-<div class="match"><div class="team">Alim 23</div><div class="team">Dakhil 2024</div></div>
-<div class="match"><div class="team">Sonali Oteet</div><div class="team">Dakhil 2014</div></div>
-</div><div class="match"><div class="team">Dakhil 2018</div><div class="team">Dakhil 2019</div></div>
-</div><!-- ROUND 2 --><div class="round">
-<div class="pair">
-<div class="match"><div class="team">Winner M3</div><div class="team">Winner M6</div></div>
-<div class="match"><div class="team">Winner M5</div><div class="team">Winner M7</div></div>
-</div><div class="pair">
-<div class="match"><div class="team">Winner M2</div><div class="team">Winner M8</div></div>
-<div class="match"><div class="team">Winner M1</div><div class="team">Winner M9</div></div>
+<body>
+<div class="wrapper">
+<svg viewBox="0 0 1400 900"><!-- ROUND 1 (left column) --><!-- 9 matches --><!-- M1 & M2 --><rect class="box" x="10" y="20" width="150" height="35"/><text class="text" x="15" y="42">D22 vs D23</text> <rect class="box" x="10" y="80" width="150" height="35"/><text class="text" x="15" y="102">D09 vs D13</text>
+
+<!-- M3 & M4 --><rect class="box" x="10" y="160" width="150" height="35"/><text class="text" x="15" y="182">D17 vs D21</text> <rect class="box" x="10" y="220" width="150" height="35"/><text class="text" x="15" y="242">D15 vs D16</text>
+
+<!-- M5 & M6 --><rect class="box" x="10" y="300" width="150" height="35"/><text class="text" x="15" y="322">D25 vs D20</text> <rect class="box" x="10" y="360" width="150" height="35"/><text class="text" x="15" y="382">D11 vs D12</text>
+
+<!-- M7 & M8 --><rect class="box" x="10" y="440" width="150" height="35"/><text class="text" x="15" y="462">A23 vs D24</text> <rect class="box" x="10" y="500" width="150" height="35"/><text class="text" x="15" y="522">SO vs D14</text>
+
+<!-- M9 --><rect class="box" x="10" y="580" width="150" height="35"/><text class="text" x="15" y="602">D18 vs D19</text>
+
+<!-- ROUND 2 --><!-- connections --><line class="line" x1="160" y1="37" x2="240" y2="60"/>
+<line class="line" x1="160" y1="97" x2="240" y2="60"/><line class="line" x1="160" y1="177" x2="240" y2="200"/>
+<line class="line" x1="160" y1="237" x2="240" y2="200"/><line class="line" x1="160" y1="317" x2="240" y2="340"/>
+<line class="line" x1="160" y1="377" x2="240" y2="340"/><line class="line" x1="160" y1="457" x2="240" y2="480"/>
+<line class="line" x1="160" y1="517" x2="240" y2="480"/><line class="line" x1="160" y1="597" x2="240" y2="620"/><!-- R2 boxes --><rect class="box" x="240" y="45" width="150" height="35"/><text class="text" x="245" y="67">TBD</text> <rect class="box" x="240" y="185" width="150" height="35"/><text class="text" x="245" y="207">TBD</text> <rect class="box" x="240" y="325" width="150" height="35"/><text class="text" x="245" y="347">TBD</text> <rect class="box" x="240" y="465" width="150" height="35"/><text class="text" x="245" y="487">TBD</text>
+
+<!-- ROUND 3 --><line class="line" x1="390" y1="60" x2="470" y2="140"/>
+<line class="line" x1="390" y1="200" x2="470" y2="140"/><line class="line" x1="390" y1="340" x2="470" y2="420"/>
+<line class="line" x1="390" y1="480" x2="470" y2="420"/><rect class="box" x="470" y="120" width="150" height="35"/><text class="text" x="475" y="142">TBD</text> <rect class="box" x="470" y="400" width="150" height="35"/><text class="text" x="475" y="422">TBD</text>
+
+<!-- loser match --><rect class="box" x="470" y="600" width="150" height="35"/><text class="text" x="475" y="622">TBD</text>
+
+<!-- SEMI --><line class="line" x1="620" y1="140" x2="720" y2="260"/>
+<line class="line" x1="620" y1="420" x2="720" y2="260"/><line class="line" x1="620" y1="600" x2="720" y2="520"/><rect class="box" x="720" y="240" width="150" height="35"/><text class="text" x="725" y="262">TBD</text> <rect class="box" x="720" y="500" width="150" height="35"/><text class="text" x="725" y="522">TBD</text>
+
+<!-- FINAL --><line class="line" x1="870" y1="260" x2="1000" y2="380"/>
+<line class="line" x1="870" y1="520" x2="1000" y2="380"/><rect class="box" x="1000" y="360" width="170" height="40"/>
+<text class="text" x="1010" y="385">FINAL</text></svg>
 </div>
-</div><!-- ROUND 3 --><div class="round">
-<div class="pair">
-<div class="match"><div class="team">Winner M10</div><div class="team">Winner M12</div></div>
-<div class="match"><div class="team">Winner M13</div><div class="team">Winner M4</div></div>
-</div><div class="match"><div class="team">Loser M14</div><div class="team">Loser M15</div></div>
-</div><!-- SEMI --><div class="round">
-<div class="pair">
-<div class="match"><div class="team">Winner M14</div><div class="team">Winner M15</div></div>
-<div class="match"><div class="team">Winner M11</div><div class="team">Winner M16</div></div>
-</div>
-</div><!-- FINAL --><div class="round final">
-<div class="match"><div class="team">Winner M17</div><div class="team">Winner M18</div></div>
-</div></div></body>
-</html>
+</body>
+  </html>
