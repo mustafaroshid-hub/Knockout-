@@ -2,79 +2,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Football Bracket</title>
+<title>Alhera Bracket</title>
 <style>
-body{
-  margin:0;
-  background:#0b0b0b;
-  color:#fff;
-  font-family:Arial, sans-serif;
-  overflow-x:auto;
-}.bracket{ display:flex; padding:20px; gap:60px; }
+body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial;overflow-x:auto}
+.bracket{display:flex;gap:80px;padding:40px}
+.round{display:flex;flex-direction:column;justify-content:space-around;position:relative}
+.match{background:#1a1a1a;padding:12px;border-radius:12px;width:170px;text-align:center;position:relative}
+.team{padding:4px 0}/* horizontal line */ .match::after{ content:""; position:absolute; right:-40px; top:50%; width:40px; height:2px; background:#fff; }
 
-.round{ display:flex; flex-direction:column; justify-content:space-around; position:relative; }
+/* vertical pair connector */ .pair{position:relative} .pair::after{ content:""; position:absolute; right:-40px; top:50%; transform:translateY(-50%); width:2px; height:100px; background:#fff; }
 
-.pair{ position:relative; display:flex; flex-direction:column; gap:40px; }
+.final .match::after{display:none} .final{display:flex;align-items:center;justify-content:center}
 
-/* vertical connector between two matches */ .pair::after{ content:""; position:absolute; right:-30px; top:25%; width:2px; height:50%; background:#fff; }
-
-.match{ background:#1a1a1a; padding:10px; border-radius:12px; width:140px; text-align:center; position:relative; }
-
-.team{ padding:4px 0; }
-
-/* horizontal line to next round */ .match::after{ content:""; position:absolute; right:-30px; top:50%; width:30px; height:2px; background:#fff; }
-
-.final .match::after{ display:none; }
-
-.final{ display:flex; flex-direction:column; justify-content:center; align-items:center; }
-
-.champion{ margin-top:20px; font-size:20px; font-weight:bold; }
-
-@media(max-width:600px){ .match{width:120px; font-size:12px;} } </style>
+@media(max-width:600px){ .match{width:140px;font-size:12px} } </style>
 
 </head>
-<body><div class="bracket">  <!-- Round 1 -->  <div class="round">
-    <div class="pair">
-      <div class="match">
-        <div class="team">Dakhil 22</div>
-        <div class="team">Dakhil 23</div>
-      </div>
-      <div class="match">
-        <div class="team">Dakhil 2001</div>
-        <div class="team">Dakhil 2013</div>
-      </div>
-    </div><div class="pair">
-  <div class="match">
-    <div class="team">Dakhil 2017</div>
-    <div class="team">Dakhil 2021</div>
-  </div>
-  <div class="match">
-    <div class="team">Dakhil 2015</div>
-    <div class="team">Dakhil 2016</div>
-  </div>
+<body><div class="bracket"><!-- ROUND 1 --><div class="round">
+<div class="pair">
+<div class="match"><div class="team">Dakhil 2022</div><div class="team">Dakhil 2023</div></div>
+<div class="match"><div class="team">Dakhil 2009</div><div class="team">Dakhil 2013</div></div>
+</div><div class="pair">
+<div class="match"><div class="team">Dakhil 2017</div><div class="team">Dakhil 2021</div></div>
+<div class="match"><div class="team">Dakhil 2015</div><div class="team">Dakhil 2016</div></div>
+</div><div class="pair">
+<div class="match"><div class="team">Dakhil 2025</div><div class="team">Dakhil 2020</div></div>
+<div class="match"><div class="team">Dakhil 2011</div><div class="team">Dakhil 2012</div></div>
+</div><div class="pair">
+<div class="match"><div class="team">Alim 23</div><div class="team">Dakhil 2024</div></div>
+<div class="match"><div class="team">Sonali Oteet</div><div class="team">Dakhil 2014</div></div>
+</div><div class="match"><div class="team">Dakhil 2018</div><div class="team">Dakhil 2019</div></div>
+</div><!-- ROUND 2 --><div class="round">
+<div class="pair">
+<div class="match"><div class="team">Winner M3</div><div class="team">Winner M6</div></div>
+<div class="match"><div class="team">Winner M5</div><div class="team">Winner M7</div></div>
+</div><div class="pair">
+<div class="match"><div class="team">Winner M2</div><div class="team">Winner M8</div></div>
+<div class="match"><div class="team">Winner M1</div><div class="team">Winner M9</div></div>
 </div>
-
-  </div>  <!-- Round 2 -->  <div class="round">
-    <div class="pair">
-      <div class="match">
-        <div class="team">Winner M1</div>
-        <div class="team">Winner M2</div>
-      </div>
-      <div class="match">
-        <div class="team">Winner M3</div>
-        <div class="team">Winner M4</div>
-      </div>
-    </div>
-  </div>  <!-- Semi -->  <div class="round">
-    <div class="match">
-      <div class="team">Winner Q1</div>
-      <div class="team">Winner Q2</div>
-    </div>
-  </div>  <!-- Final -->  <div class="round final">
-    <div class="match">
-      <div class="team">TBD</div>
-      <div class="team">TBD</div>
-    </div>
-    <div class="champion">🏆 Champion</div>
-  </div></div></body>
+</div><!-- ROUND 3 --><div class="round">
+<div class="pair">
+<div class="match"><div class="team">Winner M10</div><div class="team">Winner M12</div></div>
+<div class="match"><div class="team">Winner M13</div><div class="team">Winner M4</div></div>
+</div><div class="match"><div class="team">Loser M14</div><div class="team">Loser M15</div></div>
+</div><!-- SEMI --><div class="round">
+<div class="pair">
+<div class="match"><div class="team">Winner M14</div><div class="team">Winner M15</div></div>
+<div class="match"><div class="team">Winner M11</div><div class="team">Winner M16</div></div>
+</div>
+</div><!-- FINAL --><div class="round final">
+<div class="match"><div class="team">Winner M17</div><div class="team">Winner M18</div></div>
+</div></div></body>
 </html>
